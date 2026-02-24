@@ -1,0 +1,145 @@
+.activity-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+  border-color: var(--accent-color);
+  background: linear-gradient(135deg, #ffffff 0%, #f0f4ff 100%);
+}
+
+.activity-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.activity-card-icon {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.activity-card-category {
+  background: var(--accent-color);
+  color: white;
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.activity-card-content {
+  flex: 1;
+  margin-bottom: 1.5rem;
+}
+
+.activity-card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 0.75rem;
+}
+
+.activity-card-description {
+  font-size: 0.95rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.activity-card-footer {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.activity-card-btn {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.view-btn {
+  background: transparent;
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+}
+
+.view-btn:hover {
+  background: var(--accent-color);
+  color: white;
+  transform: translateX(-2px);
+}
+
+.register-btn {
+  background: linear-gradient(135deg, var(--accent-color) 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.register-btn:hover {
+  transform: translateX(2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .activity-card {
+    padding: 1.25rem;
+    min-height: auto;
+  }
+
+  .activity-card-icon {
+    font-size: 2.5rem;
+  }
+
+  .activity-card-title {
+    font-size: 1.15rem;
+  }
+
+  .activity-card-footer {
+    gap: 0.5rem;
+  }
+
+  .activity-card-btn {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .activity-card {
+    padding: 1rem;
+  }
+
+  .activity-card-icon {
+    font-size: 2rem;
+  }
+
+  .activity-card-title {
+    font-size: 1rem;
+  }
+
+  .activity-card-description {
+    font-size: 0.85rem;
+  }
+}
