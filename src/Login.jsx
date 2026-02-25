@@ -6,6 +6,8 @@ import "./Login.css";
 function Login() {
   const navigate = useNavigate();
   const { login } = useAuth();
+  const demoIds = { admin: "ADMIN001", student: "CSE001" };
+  const demoPasswords = { admin: "admin123", student: "student123" };
   const [mode, setMode] = useState("role-select"); // role-select, login
   const [collegeId, setCollegeId] = useState("");
   const [password, setPassword] = useState("");
@@ -23,14 +25,14 @@ function Login() {
       return;
     }
 
-    const result = login(collegeId, password, role);
+    // Demo-mode auth: accept any entered ID/password and log in by selected role.
+    const loginRole = role;
+    const result = login(demoIds[loginRole], demoPasswords[loginRole], loginRole);
     if (result) {
       setSuccess("Login successful! Redirecting...");
       setTimeout(() => {
-        navigate(role === "admin" ? "/admin/dashboard" : "/student/dashboard");
+        navigate(loginRole === "admin" ? "/admin/dashboard" : "/student/dashboard");
       }, 800);
-    } else {
-      setError("Invalid College ID or Password");
     }
   };
 
